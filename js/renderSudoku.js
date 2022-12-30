@@ -4,6 +4,7 @@ let generate = document.getElementById("generate");
 let clearBoard = document.getElementById("clear");
 let result = document.getElementById("sudoku-status");
 let user = document.getElementById("user");
+let home = document.getElementById("home");
 
 let solved=false;
 let f1=true;
@@ -467,3 +468,7 @@ function shuffle(array) {
   });
 
   //-----------------------------------------------------------------------------------------------------------------------------------------------
+
+  home.addEventListener("click",function(){
+    window.location.href="index.html";
+})
