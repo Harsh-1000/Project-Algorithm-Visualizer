@@ -31,6 +31,15 @@ td {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: whitesmoke;
+    margin: 10px;
+}
+
+#solve_soe{
+    margin-top: 35px;
+}
+
+td.one{
+    background-color: lightslategrey;
 }
 
 td.currentCell{
@@ -48,3 +57,45 @@ td.notPrime{
 td.multiple{
     background-color: orange;
 }
+
+.half{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#half2{
+    flex-direction: column;
+}
+
+.soeImage{
+    width: 500px;
+    height: auto;
+}
+
+
+h2{
+    margin-bottom: 25px;
+    color: whitesmoke;
+}
+
+li{
+    padding: 10px;
+    font-size: 17px;
+    color: whitesmoke;
+}
+
+.prime{
+    margin-top: 50px;
+}
+#result{
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: bold;
+    width: 75%;
+    height: 20vh;
+    overflow-wrap: break-word; 
+}
+

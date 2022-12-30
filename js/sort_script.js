@@ -4,6 +4,7 @@ let bars_container = document.getElementById("bars_container");
 let range = document.getElementById("range");
 let speed= document.getElementById("speed");
 let algo = document.getElementById("sorting_algos");
+let home = document.getElementById("home");
 
 
 let sortType = "";
@@ -398,4 +399,6 @@ sort_btn.addEventListener("click", function(){
     }
 });
 
-             
+home.addEventListener("click",function(){
+  window.location.href="index.html";
+})

@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .container{
     display: flex;
     align-items: center;
@@ -63,3 +62,5 @@ footer img{
     width: 20px;
     height: 20px;
 }
+
+/* --------------------------------------------------------- */

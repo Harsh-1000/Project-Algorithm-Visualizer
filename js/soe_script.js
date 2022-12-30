@@ -1,7 +1,10 @@
 let soe = document.getElementById("soe");
 let start = document.getElementById("solve_soe");
+let stop = document.getElementById("clear");
+let result = document.getElementById("result");
+let home = document.getElementById("home");
 
-let numbers =[];
+//let numbers =[];
 
 
 
@@ -18,6 +21,9 @@ function displayNumbers(){
             let soeCell = document.createElement("td");
             soeRow.appendChild(soeCell);
             soeCell.id = `cell-${count}`;
+            if(count==1){
+                soeCell.classList.add("one");
+            }
             //numbers.push(count);
             soeCell.innerText=count;
             count++;
@@ -35,9 +41,14 @@ function sleep(ms){
 }
 
 async function notPrime(num){
-
+    if(flag)
+    {
+        return;
+    }
     for(i=0;i<num.length;i++){
-
+        if(flag){
+            return;
+        }
         let cell = document.getElementById(`cell-${num[i]}`);
         cell.classList.remove("multiple");
         cell.classList.add("notPrime");
@@ -58,10 +69,18 @@ async function primeSieveAlgo(){
       
         console.log(arr);
 
-        for(let i=1;i<arr.length;i++)
+        for(let i=2;i<arr.length;i++)
         {   await sleep(ms);
+            if(flag)
+            {
+                return;
+            }
             let num =[];  
             if(i==1){
+                if(flag)
+                {
+                    return;
+                }
                 arr[1]=true;
                 let cell = document.getElementById(`cell-${i}`);
                 cell.classList.add("currentCell");
@@ -72,19 +91,37 @@ async function primeSieveAlgo(){
             }
             else{
             if(arr[i]==false){
+                if(flag)
+                {
+                    return;
+                }
                 let cell = document.getElementById(`cell-${i}`);
                 cell.classList.add("currentCell");
                 await sleep(ms*10);
                 for(let j=2;i*j<=100;j++){
+                    
                     let multi = document.getElementById(`cell-${i*j}`);
                     arr[i*j]=true; //not prime set kiyo ho
+                    if(flag)
+                    {
+                     return;
+                    }
                     multi.classList.add("multiple");
                     num.push(i*j);
+                    if(flag)
+                    {
+                        return;
+                    }
                     await sleep(ms);
                 }
+                if(flag)
+                    {
+                        return;
+                    }
                 await sleep(ms);
                 cell.classList.remove("currentCell");
                 cell.classList.add("prime");
+                result.innerHTML += i + ",&nbsp;&nbsp;";  
                 await sleep(ms);
                 await notPrime(num);
                 
@@ -92,28 +129,31 @@ async function primeSieveAlgo(){
             }}
 
         }
-
-        let result = [];
-
-        for(let i=2;i<=100;i++){
-            if(!arr[i]){
-                result.push(i);
-            }
-        }
-
-        console.log("result: " + result);
     
 }
 
+let flag=false;
+
 document.addEventListener("DOMContentLoaded", function(){
+    flag=false;
    displayNumbers(); 
+   result.innerHTML="";
 });
 
 
 start.addEventListener("click", function(){
-
+    flag=false;
     primeSieveAlgo();
 
 });
 
+stop.addEventListener("click",function(){
+    flag=true;
+    result.innerHTML="";
+    displayNumbers(); 
+ 
+});
 
+home.addEventListener("click",function(){
+    window.location.href="index.html";
+})

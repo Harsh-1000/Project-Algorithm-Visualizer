@@ -6,6 +6,8 @@ let speedBox = document.getElementById("speedBox");
 let createArray = document.getElementById("createArray");
 let arrayBox = document.getElementById("arrayBox");
 let algoBox = document.getElementById("sorting_algos_box");
+let home1 = document.getElementById("home1");
+
 
 
 let sortTypeBox = "";
@@ -458,4 +460,8 @@ sort_btn_box.addEventListener("click", function(){
         quickSortBox(un_array,0,unsorted_array.length-1);
         break;
 }
+})
+
+home1.addEventListener("click",function(){
+  window.location.href="index.html";
 })

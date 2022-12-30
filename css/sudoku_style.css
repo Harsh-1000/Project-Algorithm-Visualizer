@@ -1,7 +1,7 @@
-.container{  
+/* .container{  
     justify-content: center; 
     flex-direction: column;
-}
+} */
 
 
 .solve{
@@ -55,6 +55,7 @@ td.discovered-num{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: whitesmoke;
+    margin: 10px;
 }
 
 
@@ -72,4 +73,46 @@ td.discovered-num{
 
 .status-unsolved{
     color: red;
+}
+
+
+.half{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#half2{
+    flex-direction: column;
+}
+
+.soeImage{
+    width: 500px;
+    height: auto;
+}
+
+h2{
+    margin-bottom: 25px;
+    color: whitesmoke;
+}
+
+p{
+    padding: 10px;
+    font-size: 17px;
+    color: whitesmoke;
+}
+
+li{
+    padding: 10px;
+    font-size: 17px;
+    color: whitesmoke; 
+}
+
+h3{
+    color: whitesmoke;
+    margin-top: 20px;
+    font-size: 25px;
 }
