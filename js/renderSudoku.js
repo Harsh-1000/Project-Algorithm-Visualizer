@@ -469,6 +469,8 @@ function shuffle(array) {
 
   //-----------------------------------------------------------------------------------------------------------------------------------------------
 
-  home.addEventListener("click",function(){
+
+
+home.addEventListener("click",function(){
     window.location.href="index.html";
-})
+});
